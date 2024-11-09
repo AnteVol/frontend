@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './App.css';
 
-axios.defaults.baseURL = 'http://localhost:5000';
+axios.defaults.baseURL = 'https://web2-lab2-4fsj.onrender.com';
 axios.defaults.withCredentials = true;
 
 function App() {
