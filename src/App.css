@@ -1,38 +1,121 @@
 .App {
-  text-align: center;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Header */
+.app-title {
+    color: #0d6efd;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Instructions section */
+.instructions {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #dee2e6;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.instructions h2 {
+    color: #0d6efd;
+    margin-bottom: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.instructions-section {
+    margin-bottom: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Login section */
+.login-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.login-input {
+    padding: 8px;
+    margin-right: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.user-info {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+}
+
+/* Button styles */
+.btn {
+    padding: 8px 16px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+/* XSS Test section */
+.xss-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.text-area {
+    width: 100%;
+    min-height: 100px;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.rendered-content {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+}
+
+/* Access Control section */
+.access-control-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.protected-data-list {
+    list-style: none;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.protected-data-item {
+    padding: 5px 0;
 }
