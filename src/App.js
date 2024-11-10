@@ -166,7 +166,7 @@ function App() {
                     <textarea
                         value={userInput}
                         onChange={(e) => setUserInput(e.target.value)}
-                        placeholder="Unesite HTML/JavaScript kod za testiranje"
+                        placeholder="Unesite HTML/JavaScript"
                         className="text-area"
                     />
                     <button 
