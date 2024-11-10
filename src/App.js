@@ -16,16 +16,16 @@ function App() {
     const [password, setPassword] = useState('');
     const [showInstructions, setShowInstructions] = useState(true);
 
-    const handleXSSTest = async () => {
+    const handleXSS = async () => {
         try {
-            const response = await axios.post('/api/comments', {
+            const response = await axios.post('/api/handle-xss', {
                 content: userInput,
                 xssProtection
             });
             console.log(response.data)
             setRenderedContent(response.data.content);
         } catch (error) {
-            console.error('XSS test error:', error);
+            console.error('Error:', error);
         }
     };
 
@@ -170,7 +170,7 @@ function App() {
                         className="text-area"
                     />
                     <button 
-                        onClick={handleXSSTest}
+                        onClick={handleXSS}
                         className="btn btn-primary"
                     >
                         Test XSS
