@@ -4,14 +4,12 @@
     margin: 0 auto;
 }
 
-/* Header */
 .app-title {
     color: #0d6efd;
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* Instructions section */
 .instructions {
     background-color: #f8f9fa;
     padding: 20px;
@@ -29,7 +27,6 @@
     margin-bottom: 15px;
 }
 
-/* Login section */
 .login-section {
     background-color: #fff;
     padding: 20px;
@@ -52,7 +49,6 @@
     border-radius: 4px;
 }
 
-/* Button styles */
 .btn {
     padding: 8px 16px;
     color: white;
@@ -69,7 +65,6 @@
     background-color: #dc3545;
 }
 
-/* XSS Test section */
 .xss-section {
     background-color: #fff;
     padding: 20px;
@@ -100,7 +95,6 @@
     background-color: #f8f9fa;
 }
 
-/* Access Control section */
 .access-control-section {
     background-color: #fff;
     padding: 20px;
