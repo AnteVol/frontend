@@ -2,32 +2,26 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
-// Configure axios defaults
 axios.defaults.baseURL = 'https://web2-lab2-4fsj.onrender.com';
 axios.defaults.withCredentials = true;
 
 function App() {
-    // User input states
     const [userInput, setUserInput] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    // Security feature states
     const [xssProtection, setXssProtection] = useState(true);
     const [accessControlEnabled, setAccessControlEnabled] = useState(true);
     const [lastFetchedWithControl, setLastFetchedWithControl] = useState(null);
 
-    // Data states
     const [renderedContent, setRenderedContent] = useState('');
     const [userData, setUserData] = useState(null);
     const [protectedData, setProtectedData] = useState([]);
     
-    // UI states
     const [showInstructions, setShowInstructions] = useState(true);
 
-    // Log access control changes
     useEffect(() => {
-        console.log('Access control setting changed to:', accessControlEnabled);
+        console.log('Access control changed to:', accessControlEnabled);
     }, [accessControlEnabled]);
 
     const handleXSS = async () => {
@@ -36,10 +30,10 @@ function App() {
                 content: userInput,
                 xssProtection
             });
-            console.log('XSS Test Response:', response.data);
+            console.log('XSS response:', response.data);
             setRenderedContent(response.data.content);
         } catch (error) {
-            console.error('XSS Test Error:', error);
+            console.error('Error:', error);
             setRenderedContent('Error processing content');
         }
     };
@@ -52,7 +46,6 @@ function App() {
             });
             setUserData(response.data.user);
             setShowInstructions(false);
-            console.log('Login successful:', response.data.user);
         } catch (error) {
             console.error('Login error:', error);
             alert('Pogrešni podaci za prijavu!');
@@ -67,7 +60,6 @@ function App() {
             setShowInstructions(true);
             setUsername('');
             setPassword('');
-            console.log('Logout successful');
         } catch (error) {
             console.error('Logout error:', error);
         }
@@ -75,17 +67,16 @@ function App() {
 
     const fetchProtectedData = async () => {
         try {
-            // Log the current state before making the request
-            console.log('Fetching protected data with access control:', accessControlEnabled);
+            console.log('Fetching with access control set to:', accessControlEnabled);
             setLastFetchedWithControl(accessControlEnabled);
 
             const response = await axios.get('/api/protected-data', {
                 params: { accessControlEnabled }
             });
-            console.log('Protected data response:', response.data);
+            console.log('Response:', response.data);
             setProtectedData(response.data.data);
         } catch (error) {
-            console.error('Fetch protected data error:', error);
+            console.error('Error:', error);
             setProtectedData([]);
         }
     };
@@ -184,7 +175,6 @@ function App() {
                                 checked={xssProtection}
                                 onChange={(e) => {
                                     const newValue = e.target.checked;
-                                    console.log('XSS Protection changed to:', newValue);
                                     setXssProtection(newValue);
                                 }}
                             />
@@ -223,7 +213,6 @@ function App() {
                                 checked={accessControlEnabled}
                                 onChange={(e) => {
                                     const newValue = e.target.checked;
-                                    console.log('Access Control changed to:', newValue);
                                     setAccessControlEnabled(newValue);
                                 }}
                             />
@@ -238,11 +227,6 @@ function App() {
                     </button>
                     <div>
                         <h3>Svi dostupni podaci za {username}:</h3>
-                        {lastFetchedWithControl !== null && (
-                            <p className="text-sm text-gray-600">
-                                Last fetched with access control: {lastFetchedWithControl ? 'enabled' : 'disabled'}
-                            </p>
-                        )}
                         <ul className="protected-data-list">
                             {protectedData.map(item => (
                                 <li key={item.id} className="protected-data-item">
