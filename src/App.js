@@ -70,7 +70,7 @@ function App() {
             <h2>📚 Upute za korištenje</h2>
             
             <div className="instructions-section">
-                <h3>🔑 Informacija za prijavu u sustav</h3>
+                <h3>Za korištenje, prvo se prijavite u sustav:</h3>
                 <p>Dostupni korisnici:</p>
                 <ul>
                     <li>Admin korisnik: username: <strong>admin</strong>, password: <strong>admin123</strong></li>
@@ -114,7 +114,7 @@ function App() {
     return (
         <div className="App">
             <h1 className="app-title">
-                Demonstracija Sigurnosnih Ranjivosti
+                2. Laboratorijska vježba - security
             </h1>
 
             {showInstructions && <Instructions />}
@@ -183,7 +183,7 @@ function App() {
                         Test XSS
                     </button>
                     <div>
-                        <h3>Renderirani sadržaj:</h3>
+                        <h3>Rezultat:</h3>
                         <div 
                             className="rendered-content"
                             dangerouslySetInnerHTML={{ __html: renderedContent }} 
@@ -209,10 +209,10 @@ function App() {
                         onClick={fetchProtectedData}
                         className="btn btn-primary"
                     >
-                        Dohvati zaštićene podatke
+                        Dohvati podatke
                     </button>
                     <div>
-                        <h3>Zaštićeni podaci:</h3>
+                        <h3>Svi dostupni podaci za {username}:</h3>
                         <ul className="protected-data-list">
                             {protectedData.map(item => (
                                 <li key={item.id} className="protected-data-item">
