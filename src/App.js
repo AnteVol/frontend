@@ -86,10 +86,8 @@ function App() {
                     <li><code>&lt;img src="x" onerror="alert('XSS!');"&gt;</code></li>
                     <li><code>&lt;a href="javascript:alert('Anchor XSS!')"&gt;Click me&lt;/a&gt;</code></li>
                     <li><code>&lt;div onmouseover="alert('Mouseover XSS!')"&gt;Hover over me&lt;/div&gt;</code></li>
-                    <li><code>&lt;svg onload="alert('SVG XSS!')"&gt;&lt;/svg&gt;</code></li>
                     <li><code>&lt;input onfocus="alert('Focus XSS!')" value="Click here"&gt;</code></li>
                     <li><code>&lt;form onsubmit="alert('Form XSS!'); return false;"&gt;&lt;input type="submit" value="Submit"&gt;&lt;/form&gt;</code></li>
-                    <li><code>&lt;body onload="alert('Body XSS!')"&gt;&lt;/body&gt;</code></li>
                     <li><code>&lt;iframe srcdoc="&lt;script&gt;alert('iframe XSS!')&lt;/script&gt;"&gt;&lt;/iframe&gt;</code></li>
                     <li><code>&lt;video onerror="alert('Video XSS!');" src="invalid.mp4"&gt;&lt;/video&gt;</code></li>
                 </ul>
@@ -103,11 +101,6 @@ function App() {
                 <p>4. Uključite Access Control da vidite razliku</p>
             </div>
 
-            <div>
-                <h3>⚠️ Napomena:</h3>
-                <p>Ova aplikacija je napravljena u edukativne svrhe za demonstraciju sigurnosnih ranjivosti. 
-                   Ne koristite prikazane tehnike na stvarnim web stranicama jer je to protuzakonito!</p>
-            </div>
         </div>
     );
 
