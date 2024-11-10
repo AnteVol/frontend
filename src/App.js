@@ -59,6 +59,7 @@ function App() {
             const response = await axios.get('/api/protected-data', {
                 params: { accessControlEnabled }
             });
+            console.log(response.data.data)
             setProtectedData(response.data.data);
         } catch (error) {
             console.error('Fetch protected data error:', error);
