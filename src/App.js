@@ -194,7 +194,7 @@ function App() {
                             <input
                                 type="checkbox"
                                 checked={accessControlEnabled}
-                                onChange={(e) => setAccessControlEnabled(e.target.checked)}
+                                onChange={setAccessControlEnabled(!accessControlEnabled)}
                             />
                             Access Control
                         </label>
